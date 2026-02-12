@@ -100,7 +100,7 @@ def generate(
         return await pipeline.generate(gen_input)
 
     with Progress(
-        SpinnerColumn(),
+        SpinnerColumn(spinner_name="line"),  # ASCII-safe spinner for Windows compatibility
         TextColumn("[progress.description]{task.description}"),
         console=console,
     ) as progress:
